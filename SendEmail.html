@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Leave Application</title>
+      <style type="text/css">
+        .w3-btn {margin-bottom:10px;}
+      </style>
+      <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type="text/javascript" src="../SiteAssets/SendEmail.js"></script>
+   </head>
+   <body>
+     <div style="text-align:center">
+        <h2>Leave Request Application</h2>
+        <p id="content"></p>
+     </div>
+     <img src="../SiteAssets/Leave-Request.png" data-themekey="#" style="float: right;">
+         <table border="0" cellpadding="5" cellspacing="0">
+            <tr>
+               <td style="width: 50%">
+                  <label for="Emp_Name"><b>Employee Name</b></label><br />
+                  <input id="Emp_Name" type="text" maxlength="50" style="width:150%;max-width: 300px" />
+               </td>
+               
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <label for="Emp_ID"><b>Employee ID *</b></label><br />
+                  <input name="Emp_ID" type="text" maxlength="10" style="width:100%;max-width: 300px" />
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <label for="ManagerEmail"><b>Manager Email *</b></label><br />
+                  <input id="ManagerEmail" type="text" maxlength="100" style="width:100%;max-width: 300px" />
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <label><b>Details for Leave</b></label><br />
+               </td>
+			</tr>
+			<tr>
+               <td>
+                  <label for="StartDate"><b>Leave Start Date *</b></label><br />
+                  <input name="StartDate" type="date" maxlength="50" style="width:100%;max-width: 300px" />
+               </td>
+            </tr>
+            <tr>
+               <td>
+				<label for="EndDate"><b>Leave End Date *</b></label><br />
+                  <input name="EndDate" type="date" maxlength="50" style="width:100%;max-width: 300px" />
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <label for="LeaveType"><b>Leave Type</b></label><br />
+                  <input name="LeaveType" type="radio" value="Sick Leave" checked="checked" /> Sick Leave
+                  <input name="LeaveType" type="radio" value="Casual Leave" /> Casual Leave
+                 
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                  <label for="Comments"><b>Reference / Comments</b></label><br />
+                  <textarea name="Comments" rows="7" cols="40" style="width:100%;max-width: 435px"></textarea>
+               </td>
+            </tr>
+			<tr>
+				<td>
+					<button type="button" class="w3-btn w3-white w3-border w3-border-blue w3-round-large" id="btnSendEmail" style="margin-right: 25px;" onclick="getDetails()">Send Email</button>
+					<button type="button" class="w3-btn w3-white w3-border w3-border-blue w3-round-large" id="btnClose" onclick="document.location.href = _spPageContextInfo.webAbsoluteUrl">Cancel</button>
+				</td>
+			</tr>
+				
+         </table>
+         <script type="text/javascript">
+          $(document).ready(function() {
+            var EmpName = _spPageContextInfo.userDisplayName;
+            $("#Emp_Name").val(EmpName);
+            var ManagerEmail = "Jagadeesh@AppMakerAssociate.onmicrosoft.com";
+            $("#ManagerEmail").val(ManagerEmail);
+          });
+         </script>
+   </body>
+</html>
